@@ -1,29 +1,26 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Read the grid dimensions
-        int rows = scanner.nextInt();
-        int cols = scanner.nextInt();
-        
-        // Read the grid
-        int[][] grid = new int[rows][cols];
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                grid[i][j] = scanner.nextInt();
-            }
-        }
-
-        scanner.close();
-
         CountServersThatCommunicate counter = new CountServersThatCommunicate();
-        int result = counter.countServers(grid);
+        
+        List<int[][]> tests = new ArrayList<>();
+        int[][] test1 = {{1,0},{0,1}};
+        int[][] test2 = {{1,0},{1,1}};
+        int[][] test3 = {{1,1,0,0},{0,0,1,0},{0,0,1,0},{0,0,0,1}};
 
-        System.out.println("Number of servers that communicate with any other server: " + result);
+        tests.add(test1);
+        tests.add(test2);
+        tests.add(test3);
+
+        System.out.println("Number of servers that communicate with any other server");
+        for (int i = 0; i < tests.size(); i++) {
+            int result = counter.countServers(tests.get(i));
+            System.out.println("Test " + i + ": " + result);
+        }
     }
 
 }
