@@ -1,4 +1,6 @@
-public class CountServersThatCommunicate {
+package _1267_count_servers_that_communicate;
+
+public class Solution {
 
     public int countServers(int[][] grid) {
         int height = grid.length;

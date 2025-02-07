@@ -1,8 +1,9 @@
+package _0802_find_eventual_safe_states;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
-public class FindEventualSafeStates {
+public class Solution {
 
     public List<Integer> eventualSafeNodes(int[][] graph) {
         int n = graph.length;
